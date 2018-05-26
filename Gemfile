@@ -32,6 +32,11 @@ gem 'jbuilder', '~> 2.5'
 #
 gem 'materialize-sass', '~> 1.0.0.rc1'
 
+gem 'figaro'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,6 +46,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
 
 group :development do
