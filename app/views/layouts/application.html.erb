@@ -15,8 +15,11 @@
         <div class="container">
           <%= link_to "Forum", root_path, class: "brand-logo" %>
           <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
+            <% if user_logged_in? %>
+              <li><%= link_to "#{current_user.name}: Click to sign-out.", sign_out_path %></li>
+            <% else %>
+              <li><a href="/auth/twitter/">Sign in with Twitter</a></li>
+            <% end %>
           </ul>
         </div>
       </nav>
