@@ -10,5 +10,7 @@
   <%= @discussion.content %>
 </p>
 
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<% if user_logged_in? and current_user.owns_discussion?(@discussion) %>
+  <%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<% end %>
 <%= link_to 'Back', discussions_path %>
