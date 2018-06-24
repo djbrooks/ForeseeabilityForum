@@ -1,1 +1,16 @@
+/*
+*= require material_icons
+*/
+
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("teal", "waves-light") !default;
 @import "materialize";
+
+.gravatar-img {
+  border-radius: 50%;
+}
+
+img.gravatar-img {
+  vertical-align: middle;
+}

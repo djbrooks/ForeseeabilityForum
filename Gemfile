@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 #
 gem 'materialize-sass', '~> 1.0.0.rc1'
+gem 'material_icons'
 
 gem 'figaro'
 

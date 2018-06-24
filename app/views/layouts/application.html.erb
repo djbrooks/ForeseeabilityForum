@@ -6,6 +6,8 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -13,13 +15,18 @@
     <nav class="blue darken-2">
       <div class="nav-wrapper">
         <div class="container">
-          <%= link_to "Forum", root_path, class: "brand-logo" %>
+          <a class='brand-logo' href='/'>
+            <i class="material-icons">cloud</i>
+            Foreseeability<span class='light'> Forum</span></a>
           <ul class="right hide-on-med-and-down">
+            <li>
             <% if user_logged_in? %>
-              <li><%= link_to "#{current_user.name}: Click to sign-out.", sign_out_path %></li>
+              <a href="<%= sign_out_path %>"><img class="gravatar-img" src="<%= current_user.image_url %>">
+                <%= current_user.name %>: Click to sign-out.</a>
             <% else %>
-              <li><a href="/auth/twitter/">Sign in with Twitter</a></li>
+              <a href="/auth/twitter/"><i class="fa fa-twitter"></i> Sign in with Twitter</a>
             <% end %>
+          </li>
           </ul>
         </div>
       </nav>
@@ -28,5 +35,11 @@
   <div class="container">
     <%= yield %>
   </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
+</script>
 </body>
 </html>

@@ -18,7 +18,7 @@
       <td><%= discussion.content %></td>
       <td><%= link_to 'Show', discussion %></td>
       <% if user_logged_in? and current_user.owns_discussion?(discussion) %>
-        <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
+        <td><%= link_to 'Edit', edit_discussion_path(discussion), class: "waves-effect waves-light btn-small" %></td>
         <td><%= link_to 'Destroy', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
@@ -28,5 +28,7 @@
 
 <% if user_logged_in? %>
   <br>
-  <%= link_to 'New Discussion', new_discussion_path, class: "waves-effect waves-light btn" %>
+  <%= link_to new_discussion_path, class: "waves-effect waves-light btn" do %>
+    new discussion <%= mi.send.css_class('right') %>
+  <% end %>
 <% end %>
