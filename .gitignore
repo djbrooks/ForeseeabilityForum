@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.swp
 
 /node_modules
 /yarn-error.log
@@ -20,3 +21,4 @@
 
 # Ignore application configuration
 /config/application.yml
+

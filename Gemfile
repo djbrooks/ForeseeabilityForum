@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 #
+
+#[200~# Security alert to upgrade to 2.2.3
+gem "loofah", ">= 2.2.3"
+
 gem 'materialize-sass', '~> 1.0.0.rc1'
 gem 'material_icons'
 
